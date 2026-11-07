@@ -1,4 +1,4 @@
-package com.jces.exception;
+package com.jcse.exception;
 
 public class JcseException extends RuntimeException {
     private static final long serialVersionUID = 1L;

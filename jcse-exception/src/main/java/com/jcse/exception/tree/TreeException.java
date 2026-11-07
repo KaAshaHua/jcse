@@ -1,6 +1,6 @@
-package com.jces.exception.tree;
+package com.jcse.exception.tree;
 
-import com.jces.exception.JcseException;
+import com.jcse.exception.JcseException;
 
 public class TreeException extends JcseException {
     private static final long serialVersionUID = 1L;

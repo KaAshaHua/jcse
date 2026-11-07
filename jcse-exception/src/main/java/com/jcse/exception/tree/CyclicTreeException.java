@@ -1,4 +1,4 @@
-package com.jces.exception.tree;
+package com.jcse.exception.tree;
 
 public class CyclicTreeException extends TreeException {
     private static final long serialVersionUID = 1L;
