@@ -7,9 +7,9 @@ public class Node {
         - TREE_ID: id of tree, default by null, meaning it isn't contained any trees
         - NODE_PARENT_ID: id of parent, default by null, meaning it hasn't parent
     */
-    private int NODE_ID;
-    private int TREE_ID;
-    private int NODE_PARENT_ID;
+    private final int NODE_ID;
+    private final int TREE_ID;
+    private final int NODE_PARENT_ID;
 
     public Node(int id, int tree, int parent) {
         this.NODE_ID = id;
