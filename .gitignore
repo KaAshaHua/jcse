@@ -12,6 +12,7 @@
 
 # Package Files #
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.nar
 *.ear
@@ -31,3 +32,9 @@ build
 
 # Ignore Kotlin plugin data
 .kotlin
+
+# VS Code / Java extension
+.classpath
+.project
+.settings/
+bin/

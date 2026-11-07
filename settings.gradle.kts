@@ -15,10 +15,10 @@ plugins {
 }
 
 rootProject.name = "jcse"
-include(
+include (
     ":jcse-annotation",
-    "jcse-core",
+    ":jcse-core",
     ":jcse-exception",
-    "jcse-graphic",
+    ":jcse-graphic",
     "jcse-util"
 )
