@@ -20,5 +20,6 @@ include(
     ":jcse-core",
     ":jcse-exception",
     ":jcse-graphic",
+    ":jcse-tree",
     ":jcse-util",
 )

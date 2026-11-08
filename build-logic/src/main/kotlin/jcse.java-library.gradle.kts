@@ -25,4 +25,8 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
     failOnNoDiscoveredTests = false
+    testLogging {
+        showStandardStreams = true  
+        events("passed", "failed", "skipped")
+    }
 }
