@@ -22,6 +22,7 @@ include(
     ":jcse-exception",
     ":jcse-format",
     ":jcse-graphic",
+    ":jcse-log",
     ":jcse-tree",
     ":jcse-util",
 )
