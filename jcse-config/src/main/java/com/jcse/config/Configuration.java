@@ -77,7 +77,7 @@ public class Configuration {
         try {
             this.setProvider(provider.load(this.getPath(), type));
         } catch (FileNotFoundException cause) {
-            throw new ConfigNotFoundException(
+            throw new ConfigFileNotFoundException(
                 "The file config '" + this.getPath() + "' is not existed",
                 cause
             );
@@ -88,7 +88,7 @@ public class Configuration {
         try {
             this.provider.save(this.provider, this.getPath());
         } catch (FileNotFoundException cause) {
-            throw new ConfigNotFoundException(
+            throw new ConfigFileNotFoundException(
                 "The file config '" + this.getPath() + "' is not existed",
                 cause
             );
