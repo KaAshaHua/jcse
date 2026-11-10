@@ -20,6 +20,7 @@ include(
     ":jcse-config",
     ":jcse-core",
     ":jcse-exception",
+    ":jcse-format",
     ":jcse-graphic",
     ":jcse-tree",
     ":jcse-util",

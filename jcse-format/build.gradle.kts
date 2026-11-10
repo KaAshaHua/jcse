@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     api(project(":jcse-exception"))
+    api(project(":jcse-config"))
     api(project(":jcse-util"))
     implementation(project(":jcse-annotation"))
 
