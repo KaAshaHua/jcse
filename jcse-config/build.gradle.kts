@@ -1,0 +1,10 @@
+plugins {
+    id("jcse.java-library")
+}
+
+dependencies {
+    api(project(":jcse-exception"))
+    api(project(":jcse-util"))
+    implementation(project(":jcse-annotation"))
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.20.1") // Just using for test config
+}

@@ -17,6 +17,7 @@ plugins {
 rootProject.name = "jcse"
 include(
     ":jcse-annotation",
+    ":jcse-config",
     ":jcse-core",
     ":jcse-exception",
     ":jcse-graphic",

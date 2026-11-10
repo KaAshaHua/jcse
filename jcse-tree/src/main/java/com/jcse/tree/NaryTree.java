@@ -50,9 +50,11 @@ public class NaryTree extends Tree {
     @Override 
     public Node get(Node node) {
         if (node == null) return null;
-        if (this.contains(node) == -1)
+
+        int i = this.contains(node);
+        if (i == -1)
             throw new NodeNotFoundException("Node [" + node.getNodeID() + "] is not existed in the tree");
-        return this.nodes.get(node.getNodeID());
+        return this.nodes.get(i);
     }
 
     @Override 
