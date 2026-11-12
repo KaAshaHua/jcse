@@ -2,7 +2,7 @@ package com.jcse.tree;
 
 import org.junit.jupiter.api.Test;
 
-import com.jces.util.Trees;
+import com.jcse.util.Trees;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
