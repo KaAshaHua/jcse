@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public record LogRecord(
     Instant time,
-    int level,
+    LogLevel level,
     String loggerName,
     String threadName,
     String message,

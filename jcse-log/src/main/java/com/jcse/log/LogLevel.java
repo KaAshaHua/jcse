@@ -1,46 +1,33 @@
 package com.jcse.log;
 
-import java.util.*;
+import java.util.Locale;
 
-public class LogLevel {
-    public static final int TRACE = 0;
-    public static final int DEBUG = 1;
-    public static final int INFO = 2;
-    public static final int WARN = 3;
-    public static final int ERROR = 4;
-    public static final int FATAL = 5;
-    public static final int OFF = Integer.MAX_VALUE;
+public enum LogLevel {
+    TRACE(0),
+    DEBUG(1),
+    INFO(2),
+    WARN(3),
+    ERROR(4),
+    FATAL(5),
+    OFF(Integer.MAX_VALUE);
 
-    private int severity;
+    private final int severity;
 
-    public LogLevel(int severity) { this.severity = severity; }
+    LogLevel(int severity) { this.severity = severity; }
 
-    public int getSeverity() { return this.severity; }
+    public int severity() { return severity; }
 
-    public void setSeverity(int newSeverity) { this.severity = newSeverity; }
-
-    public boolean isEnableFor(int threshold) { return this.severity <= threshold; }
-
-    public static String levelToString(int level) {
-        return switch (level) {
-            case TRACE -> "TRACE";
-            case DEBUG -> "DEBUG";
-            case INFO -> "INFO";
-            case WARN -> "WARN";
-            case ERROR -> "ERROR";
-            default -> "FATAL";
-        };
+    public boolean isEnabledFor(LogLevel threshold) {
+        return severity >= threshold.severity();
     }
 
-    public static int parse(String text) {
-        return switch (text.trim().toUpperCase(Locale.ROOT)) {
-            case "TRACE" -> TRACE;
-            case "DEBUG" -> DEBUG;
-            case "INFO" -> INFO;
-            case "WARN" -> WARN;
-            case "ERROR" -> ERROR;
-            case "FATAL" -> FATAL;
-            default -> OFF;
-        };
+    public static LogLevel parse(String text, LogLevel fallback) {
+        if (text == null) 
+            return fallback;
+        try {
+            return valueOf(text.trim().toUpperCase(Locale.ROOT));
+        } catch (IllegalArgumentException e) {
+            return fallback;
+        }
     }
 }

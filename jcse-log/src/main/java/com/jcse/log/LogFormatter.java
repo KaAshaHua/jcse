@@ -38,7 +38,7 @@ public class LogFormatter {
     protected void appendHeader(StringBuilder sb, LogRecord record) {
         sb.append(TIME.format(record.time()))
           .append(" [").append(record.threadName()).append("] ");
-        String level = LogLevel.levelToString(record.level());
+        String level = record.level().name();
         sb.append(level);
         for (int i = level.length(); i < LEVEL_WIDTH; i++) {
             sb.append(' ');
@@ -54,7 +54,7 @@ public class LogFormatter {
         sb.append(buffer);
     }
 
-    protected String colorOf(int level) {
+    protected String colorOf(LogLevel level) {
         return switch(level) {
             case LogLevel.TRACE -> esc + start + Foreground.BRIGHT_BLACK + end;
             case LogLevel.DEBUG -> esc + start + Foreground.CYAN + end;
