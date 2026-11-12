@@ -22,25 +22,25 @@ public class LogLevel {
     public boolean isEnableFor(int threshold) { return this.severity <= threshold; }
 
     public static String levelToString(int level) {
-        switch (level) {
-            case TRACE: return "TRACE";
-            case DEBUG: return "DEBUG";
-            case INFO: return "INFO";
-            case WARN: return "WARN";
-            case ERROR: return "ERROR";
-            default: return "FATAL";
-        }
+        return switch (level) {
+            case TRACE -> "TRACE";
+            case DEBUG -> "DEBUG";
+            case INFO -> "INFO";
+            case WARN -> "WARN";
+            case ERROR -> "ERROR";
+            default -> "FATAL";
+        };
     }
 
     public static int parse(String text) {
-        switch (text.trim().toUpperCase(Locale.ROOT)) {
-            case "TRACE": return TRACE;
-            case "DEBUG": return DEBUG;
-            case "INFO": return INFO;
-            case "WARN": return WARN;
-            case "ERROR": return ERROR;
-            case "FATAL": return FATAL;
-            default: return OFF;
-        }
+        return switch (text.trim().toUpperCase(Locale.ROOT)) {
+            case "TRACE" -> TRACE;
+            case "DEBUG" -> DEBUG;
+            case "INFO" -> INFO;
+            case "WARN" -> WARN;
+            case "ERROR" -> ERROR;
+            case "FATAL" -> FATAL;
+            default -> OFF;
+        };
     }
 }
